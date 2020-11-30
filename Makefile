@@ -11,6 +11,7 @@ gen:
 	docker run -it --rm -v ${current_dir}:/workspace goforcloud/go-micro-proto-generator:1.0.0 make gen-proto
 
 gen-proto:
+	ls -la /usr/local/include
 	protoc -I/usr/local/include -I. \
 		--go_out ./ --go_opt paths=source_relative \
 		--go-grpc_out ./ --go-grpc_opt paths=source_relative \
